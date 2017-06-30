@@ -1,61 +1,201 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="View.ascx.vb" Inherits="kulturkatalogenadmin.aj.kk_aj_utovareView.View" %>
+<!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Diarie/ Logg
+                    <small>Historik över kulturkatalogens annonser</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="userstart.html"><i class="fa fa-dashboard"></i> Start</a></li>
+                    <li><a href="#">Diarie</a></li>                   
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content listcontent">
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            
+                            <!-- /.box-header -->
+                            <div class="box-body table-responsive no-padding">
+                                <table id="diarieTable" class="table table-hover">
+                                    <thead>
+                                    <tr class="tableheader">
+                                        <th>ArrID</th>
+                                        <th>Datum </th>                                         
+                                        <th>Rubrik </th>  
+                                            <th>Statustypid</th>
+                                            <th>UtövareID </th>                                      
+                                        <th>Utövare </th>                                                                               
+                                        <th>Motivering </th>
+                                        <th>Ändrad </th>
+                                        <th>Status </th>
+                                       
+                                    </tr>
+                                        </thead>
+                                    <tbody class="kk_aj_diarietbl">                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
 
-<section class="content">
+<section class="content detailcontent">
       <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Hover Data Table</h3>
+        <!-- left column -->
+        <div class="col-md-8">
+     <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">General Elements</h3>
             </div>
             <!-- /.box-header -->
-         
-<div id="jsGrid" class="box-body"></div>
-</div>
+            <div class="box-body">
+              <form role="form">
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Text</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Text Disabled</label>
+                  <input type="text" class="form-control" placeholder="Enter ..." disabled>
+                </div>
+
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>Textarea</label>
+                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Textarea Disabled</label>
+                  <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
+                </div>
+
+                <!-- input states -->
+                <div class="form-group has-success">
+                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
+                  <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
+                  <span class="help-block">Help block with success</span>
+                </div>
+                <div class="form-group has-warning">
+                  <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
+                    warning</label>
+                  <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
+                  <span class="help-block">Help block with warning</span>
+                </div>
+                <div class="form-group has-error">
+                  <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with
+                    error</label>
+                  <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
+                  <span class="help-block">Help block with error</span>
+                </div>
+
+                <!-- checkbox -->
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 1
+                    </label>
+                  </div>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 2
+                    </label>
+                  </div>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" disabled>
+                      Checkbox disabled
+                    </label>
+                  </div>
+                </div>
+
+                <!-- radio -->
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      Option two can be something else and selecting it will deselect option one
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                      Option three is disabled
+                    </label>
+                  </div>
+                </div>
+
+                <!-- select -->
+                <div class="form-group">
+                  <label>Select</label>
+                  <select class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Select Disabled</label>
+                  <select class="form-control" disabled>
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+
+                <!-- Select multiple-->
+                <div class="form-group">
+                  <label>Select Multiple</label>
+                  <select multiple class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Select Multiple Disabled</label>
+                  <select multiple class="form-control" disabled>
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+
+              </form>
             </div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
+        </div>
+    </div>
     </section>
 
 <div id="kk_aj_conf" style="">
     <span id="kk_aj_CurrentRollid" class="kk_aj_CurrentRollid" runat="server"></span>
     <span id="kk_aj_CurrentPageType" class="kk_aj_CurrentPageType" runat="server"></span>
 </div>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-    //    var clients = [
-    //{ "Name": "Otto Clay", "Age": 25, "Country": 1, "Address": "Ap #897-1459 Quam Avenue", "Married": false },
-    //{ "Name": "Connor Johnston", "Age": 45, "Country": 2, "Address": "Ap #370-4647 Dis Av.", "Married": true },
-    //{ "Name": "Lacey Hess", "Age": 29, "Country": 3, "Address": "Ap #365-8835 Integer St.", "Married": false },
-    //{ "Name": "Timothy Henson", "Age": 56, "Country": 1, "Address": "911-5143 Luctus Ave", "Married": true },
-    //{ "Name": "Ramona Benton", "Age": 32, "Country": 3, "Address": "Ap #614-689 Vehicula Street", "Married": false }
-    //    ];
-
-    //    var countries = [
-    //        { Name: "", Id: 0 },
-    //        { Name: "United States", Id: 1 },
-    //        { Name: "Canada", Id: 2 },
-    //        { Name: "United Kingdom", Id: 3 }
-    //    ];
-    //    $("#jsGrid").jsGrid({
-    //        width: "100%",
-    //        height: "400px",
-
-    //        inserting: true,
-    //        editing: true,
-    //        sorting: true,
-    //        paging: true,
-
-    //        data: clients,
-
-    //        fields: [
-    //            { name: "Name", type: "text", width: 150, validate: "required" },
-    //            { name: "Age", type: "number", width: 50 },
-    //            { name: "Address", type: "text", width: 200 },
-    //            { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
-    //            { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
-    //            { type: "control" }
-    //        ]
-    //    });
-       
-        
-    });
-</script>
