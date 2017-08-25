@@ -2,39 +2,34 @@
 <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Diarie/ Logg
-                    <small>Historik över kulturkatalogens annonser</small>
+                    Utövare - kontaktuppgifter
+                    <small>Adress, telefonnummer, e-post samt detaljerad information</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="userstart.html"><i class="fa fa-dashboard"></i> Start</a></li>
-                    <li><a href="#">Diarie</a></li>                   
+                    <li><a href="#">Utövare</a></li>                   
                 </ol>
             </section>
             <!-- Main content -->
-            <section class="content listcontent">
+            <section class="content listcontent kk_aj_utovarelist">
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box">
-                            
+                        <div class="box">                            
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
-                                <table id="diarieTable" class="table table-hover">
+                                <table id="utovareTable" class="table table-hover">
                                     <thead>
-                                    <tr class="tableheader">
-                                        <th>ArrID</th>
-                                        <th>Datum </th>                                         
-                                        <th>Rubrik </th>  
-                                            <th>Statustypid</th>
-                                            <th>UtövareID </th>                                      
-                                        <th>Utövare </th>                                                                               
-                                        <th>Motivering </th>
-                                        <th>Ändrad </th>
-                                        <th>Status </th>
-                                       
-                                    </tr>
-                                        </thead>
-                                    <tbody class="kk_aj_diarietbl">                                    
+                                        <tr class="tableheader">
+                                            <th width="5%">UtövareID </th>
+                                            <th width="15%">Organisation </th>
+                                            <th width="15%">Kontakt </th>
+                                            <th width="10%">Telefon </th>
+                                            <th>E-post </th>                                 
+                                            <th width="3%"> </th>                                     
+                                        </tr>
+                                    </thead>
+                                    <tbody class="kk_aj_utovaretbl">                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -46,154 +41,108 @@
             </section>
             <!-- /.content -->
 
-<section class="content detailcontent">
-      <div class="row">
-        <!-- left column -->
-        <div class="col-md-8">
-     <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">General Elements</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-                <div class="form-group">
-                  <label>Text</label>
-                  <input type="text" class="form-control" placeholder="Enter ...">
-                </div>
-                <div class="form-group">
-                  <label>Text Disabled</label>
-                  <input type="text" class="form-control" placeholder="Enter ..." disabled>
-                </div>
+    <!-- utovarDetalj start-->
+            <section class="content kk_aj_utovaredetalj" style="display:none;">
+                <div class="kk_aj_loader"></div>
+                <%--<!-- /.row -->
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Kontaktuppgifter - Cirkus Snygg </h3>
+                                <div class="box-tools">
+                                    <button type="button" class="btn-sm btn-block btn-default btn-sm kk_aj_utovaredetailback"><i class="fa fa-arrow-left"></i> Tillbaka</button>
+                                </div>
+                            </div>
+                            <!-- /.box-header -->
+                            
+                            <!-- utovarDetalj start--> <!-- /.box-header -->
+                            <div class="box-body table-responsive ">
 
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Textarea</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                </div>
-                <div class="form-group">
-                  <label>Textarea Disabled</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-                </div>
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group col-md-2 kk_aj_utovareid">
+                                        <label>Utövarid</label>
+                                        <input type="text" class="form-control" value="1" disabled>
+                                    </div>
+                                    <div class="form-group  col-md-12 kk_aj_utovareOrganisation">
+                                        <label>Organisation</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-6 kk_aj_utovarefornamn">
+                                        <label>Förnamn</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-6 kk_aj_utovareefternamn">
+                                        <label>Efternamn</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-12 kk_aj_utovareadress">
+                                        <label>Adress</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-4 kk_aj_utovarepostnr">
+                                        <label>Postnr</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-8 kk_aj_utovareort">
+                                        <label>Ort</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-8 kk_aj_utovarekommun">
+                                        <label>Kommun</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>                                    
+                                    <div class="form-group col-md-8 kk_aj_utovaretelefon">
+                                        <label>Telefon</label>
+                                        <input type="text" class="form-control" >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-12 kk_aj_utovareepost">
+                                        <label>E-post</label>
+                                        <input type="text" class="form-control " >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-12 kk_aj_utovareHemsida">
+                                        <label>Hemsida</label>
+                                        <input type="text" class="form-control " >
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="form-group col-md-2 kk_aj_utovareBild">
+                                        <img src="http://dnndev.me/Portals/_default/Skins/kk_Admin_Acklay/img/hajenbg.jpg" width="100" />
+                                    </div>                                    
+                                    <div class="form-group col-md-10 kk_aj_utovareBild">
+                                      <label for="exampleInputFile">Lägg till Bild/logo</label>
+                                      <input type="file" id="kk_aj_utovareBildFile">
+                                      <p class="help-block">Pressentationsbild eller logo</p>
+                                    </div>
+                                    <!-- textarea -->
+                                    <div class="form-group col-md-12 kk_aj_utovareBeskrivning">
+                                        <label>Beskrivning</label>
+                                        <textarea class="form-control" rows="5" ></textarea>
+                                        <span class="help-block" style="display:none;">Du måste fylla i dessa uppgifter</span>
+                                    </div>
+                                    <div class="pull-right">                                        
+                                        <button type="submit" class="btn btn-primary">Ändra</button>
+                                        <button type="button" class="btn btn-default kk_aj_utovaredetailback">Avbryt</button>                                        
+                                    </div>
+                                        <!-- /.btn-group -->
+                                </form>
+                            </div><!-- /.box-body -->
+                            <!-- utovarDetalj stopp-->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>--%>
+            </section>
 
-                <!-- input states -->
-                <div class="form-group has-success">
-                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
-                  <span class="help-block">Help block with success</span>
-                </div>
-                <div class="form-group has-warning">
-                  <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
-                    warning</label>
-                  <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
-                  <span class="help-block">Help block with warning</span>
-                </div>
-                <div class="form-group has-error">
-                  <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with
-                    error</label>
-                  <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
-                  <span class="help-block">Help block with error</span>
-                </div>
-
-                <!-- checkbox -->
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox">
-                      Checkbox 1
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox">
-                      Checkbox 2
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" disabled>
-                      Checkbox disabled
-                    </label>
-                  </div>
-                </div>
-
-                <!-- radio -->
-                <div class="form-group">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Option one is this and that&mdash;be sure to include why it's great
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Option two can be something else and selecting it will deselect option one
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                      Option three is disabled
-                    </label>
-                  </div>
-                </div>
-
-                <!-- select -->
-                <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Select Disabled</label>
-                  <select class="form-control" disabled>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-
-                <!-- Select multiple-->
-                <div class="form-group">
-                  <label>Select Multiple</label>
-                  <select multiple class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Select Multiple Disabled</label>
-                  <select multiple class="form-control" disabled>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-
-              </form>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-    </div>
-    </section>
 
 <div id="kk_aj_conf" style="">
     <span id="kk_aj_CurrentRollid" class="kk_aj_CurrentRollid" runat="server"></span>
