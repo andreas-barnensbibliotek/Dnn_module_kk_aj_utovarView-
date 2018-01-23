@@ -2,12 +2,12 @@
 <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Utövare - kontaktuppgifter
+                    Aktör/Utövare/Grupp - kontaktuppgifter
                     <small>Adress, telefonnummer, e-post samt detaljerad information</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="userstart.html"><i class="fa fa-dashboard"></i> Start</a></li>
-                    <li><a href="#">Utövare</a></li>                   
+                    <li><a href="#">Aktör/Utövare/Grupp</a></li>                   
                 </ol>
             </section>
             <!-- Main content -->
@@ -22,7 +22,7 @@
                                     <thead>
                                         <tr class="tableheader">
                                             <th width="5%">UtövareID </th>
-                                            <th width="15%">Organisation </th>
+                                            <th width="15%">Aktör/Utövare/Grupp </th>
                                             <th width="15%">Kontakt </th>
                                             <th width="10%">Telefon </th>
                                             <th>E-post </th>                                 
